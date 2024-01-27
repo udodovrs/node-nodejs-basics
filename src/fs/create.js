@@ -1,11 +1,12 @@
 import { writeFile } from "node:fs/promises";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
 
-const dirURL = new URL("./files", import.meta.url);
-const pathNewFile = dirURL.pathname.slice(1);
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const create = async () => {
   try {
-    await writeFile(`${pathNewFile}/fresh.txt`, "I am fresh and young", {
+    await writeFile(`${__dirname}/files/fresh.txt`, "I am fresh and young", {
       flag: "wx",
     });
   } catch {

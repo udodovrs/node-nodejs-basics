@@ -3,7 +3,6 @@ import { fileURLToPath } from "url";
 import { dirname } from "path";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-console.log(__dirname);
 
 const spawnChildProcess = async (args) => {
   spawn("node", ["script.js", ...args], {
